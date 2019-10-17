@@ -6,10 +6,8 @@ This document explains about TextMe webservices protocol.
 ## Access
 
 Webservices URL:
-`https://[TextMe_domain_or_url]/index.php?app=ws`
+`https://textme.mymangamedia.com/index.php?app=ws`
 
-Example:
-`https://TextMe.org/trial/index.php?app=ws`
 
 
 ## Parameters
