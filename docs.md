@@ -1,17 +1,15 @@
 # WEBSERVICES
 
-This document explains about playSMS webservices protocol.
-
-Minimum playSMS version **1.0-rc4**
+This document explains about TextMe webservices protocol.
 
 
 ## Access
 
 Webservices URL:
-`http://[playSMS_domain_or_url]/index.php?app=ws`
+`https://[TextMe_domain_or_url]/index.php?app=ws`
 
 Example:
-`https://playsms.org/trial/index.php?app=ws`
+`https://TextMe.org/trial/index.php?app=ws`
 
 
 ## Parameters
@@ -450,19 +448,19 @@ Returns    | return codes and login key
 Example webservice URL:
 
 ```
-http://x.dom/index.php?app=ws&u=anton&h=a45a02791b2fe2fedb078c39fd83637a&op=pv&to=0987654321&msg=test+only
+https://textme.mymangamedia.com/index.php?app=ws&u=mymanga&h=a45a02791b2fe2fedb078c39fd83637a&op=pv&to=0987654321&msg=test+only
 ```
 
 Explanation:
 
-playSMS webservices in x.dom with operation `op` pv (send SMS) was accessed by a user using username `u` and webservices token `h` with destination number `to` 0987654321, message `msg` 'test only' and expected output format is the default format, JSON format.
+TextMe webservices in textme.mymangamedia.com with operation `op` pv (send SMS) was accessed by a user using username `u` and webservices token `h` with destination number `to` 0987654321, message `msg` 'test only' and expected output format is the default format, JSON format.
 
-When succeeded playSMS will returns OK status message in JSON format:
+When succeeded TextMe will returns OK status message in JSON format:
 
 ```
 {"data":[{"status":"OK","error":"0","smslog_id":"30","queue":"afb5f34575e30ec4efe4471cf5d1bee4","to":"0987654321"}],"error_string":null}
 ```
-When error occurred playSMS will returns one of the return code, also in JSON format.
+When error occurred TextMe will returns one of the return code, also in JSON format.
 
 
 ### List of incoming SMS
@@ -470,32 +468,32 @@ When error occurred playSMS will returns one of the return code, also in JSON fo
 Example webservice URL:
 
 ```
-http://x.com/index.php?app=ws&u=anton&h=482ac0069592c647289e52dfef88be68&op=in&kwd=IDOL&format=xml
+https://textme.mymangamedia.com/index.php?app=ws&u=mymanga&h=482ac0069592c647289e52dfef88be68&op=in&kwd=IDOL&format=xml
 ```
 
 Explanation:
 
-playSMS webservices in x.com with operation `op` in (incoming SMS) was accessed by a user using username `u` and webservices token `h` with keyword `kwd` IDOL and expected output format is in XML format `format=xml`.
+TextMe webservices in textme.mymangamedia.com with operation `op` in (incoming SMS) was accessed by a user using username `u` and webservices token `h` with keyword `kwd` IDOL and expected output format is in XML format `format=xml`.
 
-When succeeded playSMS will returns OK status message in XML format:
+When succeeded TextMe will returns OK status message in XML format:
 
 ```
 <response>
     <data>
         <item>
             <id>2</id>
-            <src>+629876543210</src>
-            <dst>1234</dst>
+            <src>+254722123456</src>
+            <dst>+25472312345</dst>
             <kwd>IDOL</kwd>
             <msg>A</msg>
-            <dt>2013-05-20 12:40:38</dt>
+            <dt>2019-05-20 12:40:38</dt>
             <status>1</status>
         </item>
     </data>
 </response>
 ```
 
-When error occurred playSMS will returns one of the return code, also in XML format.
+When error occurred TextMe will returns one of the return code, also in XML format.
 
 
 ### List of contacts on phonebook
@@ -503,17 +501,17 @@ When error occurred playSMS will returns one of the return code, also in XML for
 Example webservice URL:
 
 ```
-http://x.com/index.php?app=ws&u=anton&h=482ac0069592c647289e52dfef88be68&op=get_contact&kwd=anton
+https://textme.mymangamedia.com/index.php?app=ws&u=mymanga&h=482ac0069592c647289e52dfef88be68&op=get_contact&kwd=mymanga
 ```
 
 Explanation:
 
-playSMS webservices in x.com with operation `op` get_contact was accessed by a user using username `u` and webservices token `h` with keyword `kwd` anton and expected output format is in JSON format.
+TextMe webservices in textme.mymangamedia.com with operation `op` get_contact was accessed by a user using username `u` and webservices token `h` with keyword `kwd` mymanga and expected output format is in JSON format.
 
-When succeeded playSMS will returns OK status message in JSON format:
+When succeeded TextMe will returns OK status message in JSON format:
 
 ```
-{"status":"OK","error":"0","data":[{"pid":"13674","gpid":"2","p_desc":"Anton Raharja","p_num":"08901230659","email":"","group_name":"Test Group","code":"TESTGROUP"}],"multi":true}
+{"status":"OK","error":"0","data":[{"pid":"13674","gpid":"2","p_desc":"mymanga","p_num":"+254722123456","email":"","group_name":"Test Group","code":"TESTGROUP"}],"multi":true}
 ```
 
-When error occurred playSMS will returns one of the return code, also in JSON format.
+When error occurred TextMe will returns one of the return code, also in JSON format.
